@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/mywork/:/en/",
+    "/content/mywork/:/",
     "/content/mywork/configuration:/.helix/config.json",
     "/content/mywork/metadata:/metadata.json"
   ],
