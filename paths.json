@@ -2,7 +2,8 @@
   "mappings": [
     "/content/mywork/:/en/",
     "/content/mywork/configuration:/.helix/config.json",
-    "/content/mywork/metadata:/metadata.json"
+    "/content/mywork/metadata:/metadata.json",
+    "/content/mywork/english/redirects:/english/redirects.json"
   ],
   "includes": [
     "/content/mywork/"
