@@ -2,6 +2,6 @@ import { fetchPlaceholders } from '../../scripts/placeholders.js';
 
 export default async function decorate() {
   const placeholders = await fetchPlaceholders('en');
-  const { foo } = placeholders;
-  console.log('Placeholders:', foo);
+  const { sitetitle } = placeholders;
+  console.log('Placeholders:', sitetitle);
 }
