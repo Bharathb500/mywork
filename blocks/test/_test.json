@@ -55,7 +55,7 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "test1_subtitle",
+          "name": "subtitle",
           "label": "Subtitle"
         },
         {
