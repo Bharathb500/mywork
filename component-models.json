@@ -214,5 +214,81 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "test",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "required": true
+      },
+      {
+        "component": "select",
+        "label": "Title placement",
+        "name": "placement_select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "Cta text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "Cta link",
+        "validation": {
+          "rootPath": "/content"
+        },
+        "condition": {
+          "!!": {
+            "var": "ctaText"
+          }
+        }
+      }
+    ]
   }
 ]
