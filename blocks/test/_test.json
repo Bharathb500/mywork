@@ -23,14 +23,14 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "title",
+          "name": "test_title",
           "label": "Title",
           "required": true
         },
         {
           "component": "select",
           "label": "Title placement",
-          "name": "placement_select",
+          "name": "test_select",
           "valueType": "string",
           "options": [
             { "name": "Left", "value": "left" },
@@ -55,12 +55,12 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "subtitle",
+          "name": "test1_subtitle",
           "label": "Subtitle"
         },
         {
           "component": "richtext",
-          "name": "description",
+          "name": "test1_description",
           "label": "Description",
           "valueType": "string",
           "required": true
@@ -68,13 +68,13 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "ctaText",
+          "name": "test1_linkText",
           "label": "Cta text"
         },
         {
           "component": "aem-content",
           "valueType": "string",
-          "name": "link",
+          "name": "test1_link",
           "label": "Cta link",
           "validation": {
             "rootPath": "/content"
