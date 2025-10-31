@@ -80,7 +80,7 @@
             "rootPath": "/content"
           },
           "condition": {
-            "!!": { "var": "ctaText"}
+            "!!": { "var": "test1_linkText"}
           }
         }
       ]

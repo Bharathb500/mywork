@@ -285,7 +285,7 @@
         },
         "condition": {
           "!!": {
-            "var": "ctaText"
+            "var": "test1_linkText"
           }
         }
       }
