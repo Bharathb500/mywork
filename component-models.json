@@ -77,6 +77,16 @@
             "value": "h6"
           }
         ]
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "picker",
+        "label": "Content Fragment Picker",
+        "valueType": "string",
+        "variationName": "contentFragmentVariation",
+        "validation": {
+            "rootPath": "/content"
+        }
       }
     ]
   },
