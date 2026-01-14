@@ -131,25 +131,715 @@
   },
   {
     "id": "section",
-    "fields": [
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
+      "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Column Container Name",
+          "description": "The label shown for this Column Container in the Content Tree"
+        },
+        {
+          "component": "text",
+          "name": "text",
+          "label": "Column Container Section ID",
+          "valueType": "string",
+          "description": "Enter the ID of the Section, this can be used at Tab component and Jump links"
+        },
+        {
+          "component": "select",
+          "name": "backgroundOption",
+          "label": "Background Option",
+          "description": "Select the Background Option",
+          "value": "color",
+          "required": true,
+          "options": [
+            {
+              "name": "Color",
+              "value": "color"
+            },
+            {
+              "name": "Image",
+              "value": "image"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "backgroundColor",
+          "label": "Background Color",
+          "value": "background-none",
+          "description": "Background color for the section (if Color is chosen)",
+          "required": true,
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "color"
+            ]
+          },
+          "options": [
+            {
+              "name": "Primary",
+              "value": "background-primary"
+            },
+            {
+              "name": "Custom",
+              "value": "background-custom"
+            },
+            {
+              "name": "Delicate",
+              "value": "background-delicate"
+            },
+            {
+              "name": "Muted",
+              "value": "background-muted"
+            },
+            {
+              "name": "Premium",
+              "value": "background-premium"
+            },
+            {
+              "name": "Subtle",
+              "value": "background-subtle"
+            },
+            {
+              "name": "Neutral",
+              "value": "background-neutral"
+            },
+            {
+              "name": "None",
+              "value": "background-none"
+            }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "image",
+          "label": "Background Image",
+          "description": "Background image for the section (if Image is chosen)",
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "image"
+            ]
           }
-        ]
-      }
-    ]
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Background Image Alt Text",
+          "description": "Pick alt text for background image from AEM DAM with ability to override it",
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "image"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "mobileImage",
+          "label": "Mobile Image",
+          "description": "Upload  image",
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "image"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "mobImageAlt",
+          "label": "Mobile Image Alt text",
+          "valueType": "string",
+          "description": "Pick alt text for background image from AEM DAM with ability to override it",
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "image"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "desktopBackgroundImagePositioning",
+          "label": "Desktop Background Image Positioning",
+          "value": "center center",
+          "description": "Position of the desktop background image (vertical/horizontal)",
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "image"
+            ]
+          },
+          "options": [
+            {
+              "name": "Center / Center",
+              "value": "center center"
+            },
+            {
+              "name": "Center / Left",
+              "value": "center left"
+            },
+            {
+              "name": "Center / Right",
+              "value": "center right"
+            },
+            {
+              "name": "Top / Center",
+              "value": "top center"
+            },
+            {
+              "name": "Top / Left",
+              "value": "top left"
+            },
+            {
+              "name": "Top / Right",
+              "value": "top right"
+            },
+            {
+              "name": "Bottom / Center",
+              "value": "bottom center"
+            },
+            {
+              "name": "Bottom / Left",
+              "value": "bottom left"
+            },
+            {
+              "name": "Bottom / Right",
+              "value": "bottom right"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "mobileBackgroundImagePositioning",
+          "label": "Mobile Background Image Positioning",
+          "value": "center center",
+          "description": "Position of the mobile background image (vertical/horizontal)",
+          "condition": {
+            "===": [
+              {
+                "var": "backgroundOption"
+              },
+              "image"
+            ]
+          },
+          "options": [
+            {
+              "name": "Center / Center",
+              "value": "center center"
+            },
+            {
+              "name": "Center / Left",
+              "value": "center left"
+            },
+            {
+              "name": "Center / Right",
+              "value": "center right"
+            },
+            {
+              "name": "Top / Center",
+              "value": "top center"
+            },
+            {
+              "name": "Top / Left",
+              "value": "top left"
+            },
+            {
+              "name": "Top / Right",
+              "value": "top right"
+            },
+            {
+              "name": "Bottom / Center",
+              "value": "bottom center"
+            },
+            {
+              "name": "Bottom / Left",
+              "value": "bottom left"
+            },
+            {
+              "name": "Bottom / Right",
+              "value": "bottom right"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "textColor",
+          "label": "Text Color",
+          "value": "auto",
+          "description": "Text color; auto for color backgrounds, manual for images",
+          "options": [
+            {
+              "name": "Auto (for color)",
+              "value": "auto"
+            },
+            {
+              "name": "Manual (for images)",
+              "value": "manual"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "color",
+          "label": "Color",
+          "description": "Select the Color",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "backgroundOption"
+                  },
+                  "image"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "textColor"
+                  },
+                  "manual"
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "name": "White",
+              "value": "white"
+            },
+            {
+              "name": "Black",
+              "value": "black"
+            }
+          ]
+        },
+        {
+          "component": "multiselect",
+          "name": "extra-styles",
+          "description": "Select the Extra Styles for columns",
+          "label": "Extra Styles",
+          "valueType": "string",
+          "required": true,
+          "options": [
+            {
+              "name": "Apply Offset",
+              "value": "offset"
+            },
+            {
+              "name": "Apply Verticle Divider",
+              "value": "dividers"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "style",
+          "description": "Select styles to decorate columns",
+          "label": "Select Styles for Columns",
+          "valueType": "string",
+          "required": true,
+          "options": [
+            {
+              "name": "50% - 50%",
+              "value": "two-col-50-50"
+            },
+            {
+              "name": "25% - 75%",
+              "value": "two-col-25-75"
+            },
+            {
+              "name": "75% - 25%",
+              "value": "two-col-75-25"
+            },
+            {
+              "name": "33% - 33% - 33%",
+              "value": "three-col-33-33-33"
+            },
+            {
+              "name": "25% - 25% - 50%",
+              "value": "three-col-25-25-50"
+            },
+            {
+              "name": "25% - 50% - 25%",
+              "value": "three-col-25-50-25"
+            },
+            {
+              "name": "50% - 25% - 25%",
+              "value": "three-col-50-25-25"
+            },
+            {
+              "name": "25% - 25% - 25% - 25%",
+              "value": "four-col-25-25-25-25"
+            },
+
+            {
+              "name": "66%-33%",
+              "value": "two-col-66-33"
+            },
+            {
+              "name": "33%-66%",
+              "value": "two-col-33-66"
+            },
+            {
+              "name": "40%-60%",
+              "value": "two-col-40-60"
+            },
+            {
+              "name": "60%-40%",
+              "value": "two-col-60-40"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "additionalPadding",
+          "label": "Additional Padding ",
+          "description": "Select the padding for each side so that the authors have the ability to specify spacing",
+          "required": true,
+          "options": [
+            {
+              "name": "None",
+              "value": "none"
+            },
+            {
+              "name": "Narrow",
+              "value": "narrow"
+            },
+            {
+              "name": "Wide",
+              "value": "wide"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "additionalMargin",
+          "label": "Additional Margin",
+          "description": "Select the margins for each side so that the authors have the ability to specify spacing",
+          "required": true,
+          "options": [
+            {
+              "name": "None",
+              "value": "none"
+            },
+            {
+              "name": "Narrow",
+              "value": "narrow"
+            },
+            {
+              "name": "Wide",
+              "value": "wide"
+            }
+          ]
+        },
+
+        {
+          "component": "checkbox-group",
+          "name": "enableinnercontainer",
+          "valueType": "string",
+          "description": "When selected, this option displays additional fields such as color (e.g., white, black, etc.), border radius, and other relevant styling options.",
+          "options": [
+            {
+              "name": "Enable Inner Container",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "name": "containerinner",
+          "label": "Inner Container Fields",
+          "valueType": "string",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableinnercontainer"
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "style_backgroundOption",
+              "label": "Background Option",
+              "value": "inner-color",
+              "description": "Select the Background Option",
+              "required": true,
+              "options": [
+                {
+                  "name": "Color",
+                  "value": "inner-color"
+                },
+                {
+                  "name": "Image",
+                  "value": "inner-image"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "style_backgroundColor",
+              "label": "Background Color",
+              "value": "inner-background-none",
+              "description": "Background color for the section (if Color is chosen)",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "containerinner|style_backgroundOption"
+                  },
+                  "inner-color"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "inner-background-primary"
+                },
+                {
+                  "name": "Custom",
+                  "value": "inner-background-custom"
+                },
+                {
+                  "name": "Delicate",
+                  "value": "inner-background-delicate"
+                },
+                {
+                  "name": "Muted",
+                  "value": "inner-background-muted"
+                },
+                {
+                  "name": "Premium",
+                  "value": "inner-background-premium"
+                },
+                {
+                  "name": "Subtle",
+                  "value": "inner-background-subtle"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "inner-background-neutral"
+                },
+                {
+                  "name": "None",
+                  "value": "inner-background-none"
+                }
+              ]
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "innerimage",
+              "label": "Background Image",
+              "description": "Background image for the section (if Image is chosen)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "containerinner|style_backgroundOption"
+                  },
+                  "inner-image"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "innerimageAlt",
+              "label": "Background Image Alt Text",
+              "valueType": "string",
+              "description": "Pick alt text for background image from AEM DAM with ability to override it",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "containerinner|style_backgroundOption"
+                  },
+                  "inner-image"
+                ]
+              }
+            },
+
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "mobinnerimage",
+              "label": "Mobile Background Image",
+              "description": "Mobile Background image for the section (if Image is chosen)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "containerinner|style_backgroundOption"
+                  },
+                  "inner-image"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "mobinnerimageAlt",
+              "label": "Mobile Background Image Alt Text",
+              "valueType": "string",
+              "description": "Pick alt text for mobile background image from AEM DAM with ability to override it",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "containerinner|style_backgroundOption"
+                  },
+                  "inner-image"
+                ]
+              }
+            },
+
+            {
+              "component": "select",
+              "name": "style_textColor",
+              "label": "Text Color",
+              "value": "inner-text-auto",
+              "description": "Text color; auto for color backgrounds, manual for images",
+              "options": [
+                {
+                  "name": "Auto (for color)",
+                  "value": "inner-text-auto"
+                },
+                {
+                  "name": "Manual (for images)",
+                  "value": "inner-text-manual"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "style_color",
+              "label": "Color",
+              "description": "Select the Color",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "containerinner|style_backgroundOption"
+                      },
+                      "inner-image"
+                    ]
+                  },
+                  {
+                    "===": [
+                      {
+                        "var": "containerinner|style_textColor"
+                      },
+                      "inner-text-manual"
+                    ]
+                  }
+                ]
+              },
+              "options": [
+                {
+                  "name": "White",
+                  "value": "inner-color-white"
+                },
+                {
+                  "name": "Black",
+                  "value": "inner-color-black"
+                }
+              ]
+            },
+            {
+              "component": "checkbox-group",
+              "name": "roundedBorderscolumncontainer",
+              "label": "Rounded Borders",
+              "valueType": "string",
+              "description": "By enabling the checkbox, rounded borders will be applied to the inner container",
+              "options": [
+                {
+                  "name": "Rounded Borders",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "checkbox-group",
+          "name": "enableTarget",
+          "valueType": "string",
+          "description": "Select this checkbox to Enable Target",
+          "options": [
+            {
+              "name": "Enable Target",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "checkbox-group",
+          "name": "hideblocks",
+          "valueType": "string",
+          "description": "Select this checkbox to Hide",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableTarget"
+              }
+            ]
+          },
+          "options": [
+            {
+              "name": "Enable HideBlock",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "id",
+          "label": "Target's Data ID",
+          "valueType": "string",
+          "description": "Enter Target's Data ID",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableTarget"
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "target-Id",
+          "label": "Target's Target ID",
+          "valueType": "string",
+          "description": "Enter Target's Target ID",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableTarget"
+              }
+            ]
+          }
+        }
+      ]
   },
   {
     "id": "card",
