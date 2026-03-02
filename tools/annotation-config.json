@@ -1,0 +1,38 @@
+{
+  "appBuilderConfig": {
+    "appUrl": "https://27203-annotations-stage.adobeio-static.ne",
+    "apiEndpoint": "https://27203-annotations-stage.adobeio-static.ne/api",
+    "timeout": 5000,
+    "retryAttempts": 3,
+    "retryDelay": 1000
+  },
+  "annotationComponents": [
+    {
+      "id": "annotation-checkbox-1",
+      "componentName": "Mark as Important",
+      "description": "Flag this annotation as important for future reference",
+      "type": "checkbox",
+      "required": false,
+      "defaultValue": false
+    },
+    {
+      "id": "annotation-checkbox-2",
+      "componentName": "Request Review",
+      "description": "Request review from team members on this annotation",
+      "type": "checkbox",
+      "required": false,
+      "defaultValue": false
+    }
+  ],
+  "storageConfig": {
+    "enableSessionStorage": true,
+    "enableLocalStorage": true,
+    "storageKey": "annotationState"
+  },
+  "uiConfig": {
+    "position": "bottom-right",
+    "theme": "auto",
+    "showAnimations": true,
+    "autoInitialize": true
+  }
+}
